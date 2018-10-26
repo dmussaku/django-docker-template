@@ -18,9 +18,9 @@ import dj_database_url
 def getenv(key):
     return os.getenv(key)
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -32,6 +32,8 @@ SECRET_KEY = '%)uvl=a3f0hlg4hq^ev37mf^5@66^e4m!#(5$3x^*xmp502g+%'
 DEBUG = getenv('DEBUG') or True
 
 ALLOWED_HOSTS = getenv('ALLOWED_HOSTS') or ['*']
+
+CELERY_BROKER_URL = os.environ.get('CELERY_BROKER_URL')
 
 
 # Application definition
@@ -125,5 +127,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
-CELERY_BROKER_URL = os.environ.get('CELERY_BROKER_URL')
