@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd /code/app
+celery -A app worker -l INFO
